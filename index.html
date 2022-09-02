@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Loan Payments Calculator using Javascript</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<style type="text/css">
+		.form-inline {
+			border: solid 2px #b7ddf2;
+			border-radius: 5px;
+			padding: 15px;
+			background: #ebf4fb;
+			margin: 50px auto;
+			width: 40%;
+		}
+
+		.btn {
+			margin: 10px auto;
+		}
+
+		.btn:hover {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container, form-inline">
+		<form name="loanForm">
+			<h2>Calculate loan payments</h2>
+			<table>
+				<tr>
+					<td colspan="3"><b>Enter Loan Information:</b></td>
+				</tr>
+				<tr>
+					<td>Loan amount in currency:</td>
+					<td><input type="text" name="loanAmt" id="loanAmtId" size="12" onchange="validateLoanAmount()"></td>
+				</tr>
+				<tr>
+					<td>Rate of Interest in Percentage:</td>
+					<td><input type="text" name="Interest" id="InterestId" size="12" onchange="validateNumber(this.id, this.name)"></td>
+				</tr>
+				<tr>
+					<td>Repayment period in years:</td>
+					<td><input type="text" name="years" id="yearsId" size="12" onchange="validatePeriod(this.id)"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" class="btn, btn btn-primary" value="Calculate" onclick="calculatePayment()">
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table>
+				<tr><td colspan="2"><b>Payment Information:</b></td></tr>
+				<tr>
+					<td>Monthly Payment:</td>
+					<td><input type="text" name="monthlyPayment" id="monthlyPaymentId" size="12"></td>
+				</tr>
+				<tr>
+					<td>Total Payment:</td>
+					<td><input type="text" name="totalPayment" id="totalPaymentId" size="12"></td>
+				</tr>
+				<tr>
+					<td>Total Interest Payment:</td>
+					<td><input type="text" name="totalInterest" id="totalInterestId" size="12"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
